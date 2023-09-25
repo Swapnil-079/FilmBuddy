@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            font-family: 'Karla', sans-serif;
+        }
+        .container{
+            background-color: white;
+            width: 40%;
+            margin: auto;
+            margin-top: 15%;
+            border-radius: 5px;
+        }
+        @media (max-width: 480px) {
+            .container{
+                width: 75%;
+                margin-top: 40%;
+                border-radius: 3px;
+            }
+        }
+        .title{
+            margin: 10px;
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .description{
+            margin: 10px;
+            margin-bottom: 25px;
+            font-size: large;
+        }
+        .button{
+            color: black;
+            float: right;
+            margin: 5px;
+           
+        }
+        .button:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+    <div class="container">
+        <button class="button">&#10006;</button>
+        <p class="title">Title</p>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione odio voluptates sit magnam vitae delectus architecto, natus saepe facilis omnis quas pariatur iste enim aperiam. Quia optio numquam asperiores dolorum?</p>
+    </div>
+    <script>
+        'use strict';
+        const title = document.querySelector(".title");
+        const description = document.querySelector(".description");
+        const button = document.querySelector('.button')
+        title.textContent = localStorage.getItem('title');
+        description.textContent = localStorage.getItem('description');
+
+        document.addEventListener('keydown', evt => {
+         if (evt.key === 'Escape') {
+            window.close();
+         }
+        });
+        button.addEventListener('click',()=>window.close());
+
+    </script>
+</body>
+</html>

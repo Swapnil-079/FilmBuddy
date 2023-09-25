@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilmBuddy</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- goggle font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- swipper  -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+
+<body>
+
+  <div class="top-section">
+    <div class="topleft-section">
+      <img src="logo.jpg" class="topleft-section-img">
+      <p class="topleft-section-text">FilmBuddy</p>
+    </div>
+    <div class="topright-section">
+      <img src="search.png"  class="search-symbol">
+      <form class="form">
+        <input type="text" placeholder="search movies by genre" class="searchbar">
+      </form>
+      <div class="Error"></div>
+    </div>
+  </div>
+ 
+  <section class="middle-section">
+    <div class="swiper mySwiper container">
+      <h1 class="text1">In Theaters</h1>
+      <div class="swiper-wrapper content" id="card-container-1">
+
+        <!-- <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="Nun.jpg" alt="" class="card-img">
+            </div>
+            <div class="details">
+              <p class="year">2023</p>
+              <div class="title-container">
+                <h3 class="movie-name">The Nun II</h3>
+              </div>
+              <button class="watch-trailer-1">Overview</button>             
+            </div>
+          </div>
+        </div> -->
+
+        
+
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <!-- <div class="swiper-button-prev"></div> -->
+    <div class="swiper-scrollbar"></div>
+    <!-- <div class="swiper-pagination"></div> -->
+  </section>
+  <section class="middle-section">
+    <div class="swiper mySwiper container">
+      <h1 class="text1">Fan Favourites</h1>
+      <div class="swiper-wrapper content" id="card-container-2">
+
+        <!-- <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="Nun.jpg" alt="" class="card-img">
+            </div>
+            <div class="details">
+              <p class="year">2023</p>
+              <div class="title-container">
+                <h3 class="movie-name">The Nun II</h3>
+              </div>
+              <button class="watch-trailer-2">Overview</button> 
+            </div>
+          </div>
+        </div> -->
+        
+
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-scrollbar"></div>
+    <!-- <div class="swiper-pagination"></div> -->
+  </section>
+
+  <div class="bottom-section">
+    <h1 class="text2">What vibe are you in?</h1>
+  </div>
+  <div class="bottom-section">
+  <div class="buttons">
+    <button class="Action button" ><h3>Action</h3></button>
+    <button class="Adventure button"><h3>Adventure</h3></button>
+    <button class="Animation button"><h3>Animation</h3></button>
+    <button class="Comedy button"><h3>Comedy</h3></button>
+    <button class="Crime button"><h3>Crime</h3></button>
+    <button class="Drama button"><h3>Drama</h3></button>
+    <button class="Horror button"><h3>Horror</h3></button>
+    <button class="Romance button"><h3>Romance</h3></button>
+    <button class="Space button"><h3>Space</h3></button>
+    <button class="Sci-Fi button"><h3>Sci-Fi</h3></button>
+    <button class="Thriller button"><h3>Thriller</h3></button>
+    <button class="War button"><h3>War</h3></button>
+  </div>
+</div>
+<div style="display: flex; margin-bottom: 50px;">
+  <p class="love"> Made with ❤️ in India</p>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
