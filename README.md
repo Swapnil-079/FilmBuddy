@@ -21,10 +21,12 @@ Filmbuddy is a movie recommendation website that helps you discover new movies b
 
 
 ## Usage
-1. Select your preferred movie genre on the homepage.
-2. Discover a list of recommended movies from IMDb.
-3. Check out the latest in-theater releases and fan favorites.
+1. Open the website
+2. Check out the latest in-theater releases and fan favorites along with their overview.
+3. Select your preferred movie genre on the homepage.
+4. Discover a list of recommended movies from IMDb.
+
 
 ## How it Works
-Filmbuddy scrapes movie data from IMDb using BeautifulSoup, and it fetches movie posters from the TMDB API. The data is presented to users through a user-friendly web interface powered by Flask.
+Filmbuddy scrapes movie data from IMDb using BeautifulSoup, and it fetches movie posters from the TMDB API. The data is presented to users through a user-friendly web interface.
 
