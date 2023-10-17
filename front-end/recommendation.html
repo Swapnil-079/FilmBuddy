@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FilmBuddy</title>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Karla", sans-serif;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+      }
+      .top-section {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        background-color: yellow;
+        margin: 0px;
+        min-width: 360px;
+      }
+      .topleft-section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .topleft-section-img {
+        margin: 0px 5px;
+        width: 27px;
+      }
+      .topleft-section-text {
+        margin: 12px 0px;
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer;
+      }
+
+      .topright-section {
+        flex: 6;
+        display: flex;
+        align-items: center;
+      }
+      .search-symbol {
+        margin-left: 10px;
+        width: 28px;
+      }
+      .searchbar {
+        background-color: yellow;
+        border: none;
+        color: black;
+        outline: none;
+      }
+      ::placeholder {
+        color: black;
+        opacity: 1;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        margin-bottom: 80px;
+      }
+      .main-text {
+        color: yellow;
+        font-size: xx-large;
+      }
+      .details-0 {
+        display: flex;
+        background-color: rgb(55, 52, 52);
+        color: white;
+        border-radius: 5px;
+      }
+      .details-1 {
+        display: flex;
+        background-color: rgb(87, 86, 86);
+        color: white;
+        border-radius: 5px;
+      }
+      .details-container {
+        margin-left: 5px;
+      }
+      .title {
+        margin: 5px auto;
+      }
+      .star {
+        margin: 5px auto;
+      }
+      .description {
+        margin: 5px auto;
+      }
+      .casting {
+        margin: 8px auto;
+      }
+      .image-container {
+        padding: 10px;
+      }
+      .image {
+        width: 80px;
+      }
+      .preloader {
+        background: #000 url(animation.gif) no-repeat center;
+        background-size: 25%;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+      }
+    </style>
+    <div class="preloader"></div>
+    <div class="top-section">
+      <div class="topleft-section">
+        <img
+          src="logo.jpg"
+          class="topleft-section-img"
+          onclick="window.open('index.html','_self')"
+        />
+        <p
+          class="topleft-section-text"
+          onclick="window.open('index.html','_self')"
+        >
+          FilmBuddy
+        </p>
+      </div>
+      <div class="topright-section">
+        <img src="search.png" class="search-symbol" />
+        <form class="form">
+          <input
+            type="text"
+            placeholder="search movies by genre"
+            class="searchbar"
+          />
+        </form>
+        <div class="Error"></div>
+      </div>
+    </div>
+    <main>
+      <h1 class="main-text">
+        Top 50 <span class="text-genre">Action</span> Movies
+      </h1>
+
+      <!-- <div class="details-0">
+            <div class="image-container">
+                <img src="blank.png" alt="Poster not Available" class="image">
+            </div>
+            <div class="details-container">
+               <h2 class="title"><span class="index">1. </span><span class="name">Aquaman and the Lost Kingdom </span><span class="year">(2023)</span></h2>
+               <p class="star">⭐<span class="rating">NA</span></p>
+               <p class="description">Arthur must enlist the help of his half-brother Orm in order to protect Atlantis against Black Manta, who has unleashed a devastating weapon in his obsessive quest to avenge his father's death.</p>
+               <p class="casting">Director: <span class="director">James Wan <br></span>Stars: <span class="stars">Jason Momoa, Ben Affleck, Patrick Wilson, Yahya Abdul-Mateen II</span></p>
+            </div>
+        </div>
+
+        <div class="details-1">
+            <div class="image-container">
+                <img src="https://m.media-amazon.com/images/M/MV5BOTE5YjY5MTItYTBmZi00NDhhLWFiOTItYjdjODRhZDA1YjM4XkEyXkFqcGdeQXVyMjMyMzI4MzY@._V1_UY98_CR0,0,67,98_AL_.jpg" alt="Poster not Available" class="image">
+            </div>
+            <div class="details-container">
+              <h2 class="title"><span class="index">2. </span><span class="name">Jawan </span><span class="year">(2023)</span></h2>
+              <p class="star">⭐<span class="rating">7.7</span></p>
+              <p class="description">A high-octane action thriller which outlines the emotional journey of a man who is set to rectify the wrongs in the society.</p>
+               <p class="casting">Director: <span class="director">Atlee <br></span>Stars: <span class="stars"> Nayanthara, Shah Rukh Khan, Vijay Sethupathi, Deepika Padukone</span></p>
+            </div>
+        </div> -->
+    </main>
+
+    <script>
+      "use strict";
+      let genre = location.search.substring(1);
+      console.log(genre);
+      const main = document.querySelector("main");
+      const heading = document.querySelector(".text-genre");
+      const form = document.querySelector(".form");
+      const searchbar = document.querySelector(".searchbar");
+      const showError = document.querySelector(".Error");
+      const preloader = document.querySelector(".preloader");
+
+      //searchbar
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let input = searchbar.value;
+        let str = input.toLowerCase().trim();
+        let genre = str.charAt(0).toUpperCase() + str.slice(1);
+
+        if (
+          genre === `Action` ||
+          genre === `Adventure` ||
+          genre === `Animation` ||
+          genre === `Comedy` ||
+          genre === `Crime` ||
+          genre === `Drama` ||
+          genre === `Horror` ||
+          genre === `Romance` ||
+          genre === `Space` ||
+          genre === `Sci-fi` ||
+          genre === `Thriller` ||
+          genre === `War`
+        ) {
+          location.href = `recommendation.html?${genre}`;
+        } else {
+          showError.textContent = `Try other genre`;
+        }
+      });
+
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMWJmNDMwNDIyODkwMTBjYWUzYTE2MmMwN2Q1Zjc5NSIsInN1YiI6IjY1MGRlZDc4ZDM0ZWIzMDBhZDA2MDRjNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UGLrdJNdLs_ZfIMC31n1BCanS1Vw49v1m4c253vUdHE",
+        },
+      };
+
+      const getData = async function (genre) {
+        const res = await fetch(`https://filmbuddy.onrender.com/${genre}`);
+        const data = await res.json();
+        console.log(data);
+        upadteUI(data);
+      };
+      getData(genre);
+
+      const upadteUI = function (data) {
+        heading.textContent = genre;
+        for (let i = 0; i < 50; i++) {
+          let str;
+          str = `<div class="details-${i % 2}">
+                <div class="image-container">
+                    <img src="blank.png" alt="Poster not Available" class="image">
+                </div>
+                <div class="details-container">
+                <h2 class="title"><span class="index">${
+                  i + 1
+                }. </span><span class="name">${
+            data.name_of_movie[i]
+          } </span><span class="year">(${data.release_year[i]})</span></h2>
+                <p class="star">⭐<span class="rating">${
+                  data.movie_rating[i]
+                }</span></p>
+                <p class="description">${data.Description[i]}.</p>
+                <p class="casting">Director: <span class="director">${
+                  data.Director[i]
+                } <br></span>Stars: <span class="stars"> ${
+            data.Star[i]
+          }</span></p>
+                </div>
+                </div>`;
+
+          main.insertAdjacentHTML("beforeend", str);
+        }
+        preloader.style.display = "none";
+
+        const images = document.querySelectorAll(".image");
+        images.forEach(async (item, i) => {
+          const res = await fetch(
+            `https://api.themoviedb.org/3/search/movie?query=${data.name_of_movie[i]}&include_adult=false&language=en-US&page=1`,
+            options
+          );
+          const picture = await res.json();
+          item.src = `https://image.tmdb.org/t/p/w185${picture.results[0]["poster_path"]}`;
+        });
+      };
+    </script>
+  </body>
+</html>
